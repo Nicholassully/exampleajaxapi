@@ -22,6 +22,8 @@ app.get('/api/blogs', (req, res) => {
 });
 
 app.post('/api/blogs', (req, res) => {
+  console.log(req.body);
+  console.log(req.headers);
   var blogToSave = new Blog(req.body);
   blogToSave.save(function (err, savedBlog) {
     res.end();
